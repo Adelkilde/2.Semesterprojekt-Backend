@@ -1,0 +1,1 @@
+CREATE DATABASE forfatter_db
