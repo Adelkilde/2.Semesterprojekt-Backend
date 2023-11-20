@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import fs from "fs/promises";
-// import connection from "./database.js";
+import dbConnection from "./database.js";
 
 const app = express();
 const port = process.env.PORT || 3333;
