@@ -2,8 +2,6 @@
 
 <!-- Noter til os
 
-cd src
-
 npm init -y
 
 npm install express
