@@ -6,3 +6,6 @@
 
 # Ignore node_modules folder
 node_modules
+
+# Ignore DigiCertGlobalRootCA.crt.pem
+DigiCertGlobalRootCA.crt.pem
