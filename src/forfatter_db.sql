@@ -2,7 +2,7 @@
 CREATE DATABASE forfatter_db
 
 -- Author table
-CREATE TABLE Author (
+CREATE TABLE Authors (
     author_id INT PRIMARY KEY AUTO_INCREMENT,
     image VARCHAR(255), -- File path or link to the image
     name VARCHAR(100),
@@ -21,7 +21,7 @@ CREATE TABLE Works (
     average_rating DECIMAL(3, 2),
     purchase_link VARCHAR(255),
     description TEXT,
-    FOREIGN KEY (author_id) REFERENCES Author(author_id)
+    FOREIGN KEY (author_id) REFERENCES Authors(author_id)
 );
 
 -- Reviews table
@@ -42,7 +42,7 @@ CREATE TABLE News (
     headline VARCHAR(255),
     content TEXT,
     created_date DATETIME,
-    FOREIGN KEY (author_id) REFERENCES Author(author_id)
+    FOREIGN KEY (author_id) REFERENCES Authors(author_id)
 );
 
 -- Contact-Me table
@@ -60,5 +60,9 @@ CREATE TABLE SocialMedia (
     author_id INT,
     platform VARCHAR(255),
     link VARCHAR(255),
-    FOREIGN KEY (author_id) REFERENCES Author(author_id)
+    FOREIGN KEY (author_id) REFERENCES Authors(author_id)
 );
+-- Indsæt to forfattere i Author-tabel
+INSERT INTO Authors (image, name, birth_year, biography) VALUES
+    ('path/to/image1.jpg', 'Forfatter 1', 1980, 'Biografi for forfatter 1'),
+    ('path/to/image2.jpg', 'Forfatter 2', 1990, 'Biografi for forfatter 2');
