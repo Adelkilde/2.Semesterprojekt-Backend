@@ -1,6 +1,5 @@
 import { sequelize, DataTypes } from "../script/database/database.js";
-import { Work } from "./works.js";
-
+import Work from "./works.js";
 const Review = sequelize.define(
   "Review",
   {
@@ -35,3 +34,4 @@ const Review = sequelize.define(
 );
 
 Review.belongsTo(Work, { foreignKey: "work_id" });
+export default Review;
