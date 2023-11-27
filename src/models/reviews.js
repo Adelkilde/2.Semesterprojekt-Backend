@@ -1,27 +1,30 @@
 import { sequelize, DataTypes } from "../script/database/database.js";
-import Author from "./authors.js";
+import { Work } from "./works.js";
 
-const News = sequelize.define(
-  "News",
+const Review = sequelize.define(
+  "Review",
   {
-    news_id: {
+    review_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    headline: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    content: {
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    review_text: {
       type: DataTypes.TEXT,
+    },
+    rating: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
-    created_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-    author_id: {
+    work_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -31,4 +34,4 @@ const News = sequelize.define(
   }
 );
 
-News.belongsTo(Author, { foreignKey: "author_id" });
+Review.belongsTo(Work, { foreignKey: "work_id" });

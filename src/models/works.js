@@ -1,17 +1,13 @@
 import { sequelize, DataTypes } from "../script/database/database.js";
+import Author from "./authors.js";
 
 const Work = sequelize.define(
   "Work",
   {
     work_id: {
       type: DataTypes.INTEGER,
-      autoIncrement: true,
       primaryKey: true,
-      allowNull: false,
-    },
-    author_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+      autoIncrement: true,
     },
     image: {
       type: DataTypes.STRING,
@@ -23,10 +19,10 @@ const Work = sequelize.define(
     },
     publication_date: {
       type: DataTypes.DATE,
+      allowNull: false,
     },
     publisher: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     average_rating: {
       type: DataTypes.DECIMAL(3, 2),
@@ -36,12 +32,17 @@ const Work = sequelize.define(
     },
     description: {
       type: DataTypes.TEXT,
+    },
+    author_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
   {
-    timestamps: false,
+    timestamps: true,
   }
 );
+
+Work.belongsTo(Author, { foreignKey: "author_id" });
 
 export default Work;

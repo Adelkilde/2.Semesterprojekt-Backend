@@ -5,9 +5,8 @@ const Author = sequelize.define(
   {
     author_id: {
       type: DataTypes.INTEGER,
-      autoIncrement: true,
       primaryKey: true,
-      allowNull: false,
+      autoIncrement: true,
     },
     image: {
       type: DataTypes.STRING,
@@ -17,17 +16,16 @@ const Author = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    birth_year: {
-      type: DataTypes.INTEGER,
+    date_of_birth: {
+      type: DataTypes.DATE,
       allowNull: false,
     },
     biography: {
       type: DataTypes.TEXT,
-      allowNull: false,
     },
   },
   {
-    timestamps: false,
+    timestamps: true,
   }
 );
 
