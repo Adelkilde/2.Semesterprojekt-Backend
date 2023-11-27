@@ -1,4 +1,4 @@
-import { sequelize, DataTypes } from "../database.js";
+import { sequelize, DataTypes } from "../script/database/database.js";
 
 const Work = sequelize.define(
   "Work",

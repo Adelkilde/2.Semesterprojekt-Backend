@@ -1,7 +1,7 @@
 import express from "express";
-import authorRoutes from "./routes/authors.js";
-import workRoutes from "./routes/works.js";
-import ContactMeRoutes from "./routes/contactMe.js";
+import authorRoutes from "../routes/authors.js";
+import workRoutes from "../routes/works.js";
+import ContactMeRoutes from "../routes/contactMe.js";
 
 const app = express();
 const port = 3000;
