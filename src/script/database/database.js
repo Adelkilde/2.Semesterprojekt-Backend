@@ -1,31 +1,25 @@
-//Connecting to the server
-
 import sequelize from "sequelize";
-
 import { Sequelize, DataTypes } from "sequelize";
 import { config } from "dotenv";
 
 config();
 
-// const sequelize = new Sequelize(process.env.MYSQL_DATABASE, process.env.MYSQL_USER, process.env.MYSQL_PASSWORD, {
-//   host: process.env.MYSQL_HOST,
-//   dialect: "mysql",
-//   dialectOptions: {
-//     ssl: {
-//       require: true,
-//     },
-//   },
-//   insecureAuth: true,
-//   logging: console.log,
-// });
-
-const sequelize = new Sequelize({
-  dialect: "mysql",
-  host: "your-database-host",
-  username: "your-username",
-  password: "your-password",
-  database: "author_db",
-});
+const sequelize = new Sequelize(
+  process.env.MYSQL_DATABASE,
+  process.env.MYSQL_USER,
+  process.env.MYSQL_PASSWORD,
+  {
+    host: process.env.MYSQL_HOST,
+    dialect: "mysql",
+    dialectOptions: {
+      ssl: {
+        require: true,
+      },
+    },
+    insecureAuth: true,
+    logging: console.log,
+  }
+);
 
 const Author = sequelize.define("Author", {
   author_id: {
