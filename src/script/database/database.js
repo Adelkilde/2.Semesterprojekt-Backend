@@ -132,6 +132,7 @@ const ContactMe = sequelize.define("ContactMe", {
     type: DataTypes.DATE,
   },
 });
+ContactMe.belongsTo(Author, { foreignKey: "author_id" });
 
 const SocialMedia = sequelize.define("SocialMedia", {
   soMe_id: {
