@@ -35,3 +35,5 @@ const ContactMe = sequelize.define(
   }
 );
 ContactMe.belongsTo(Author, { foreignKey: "author_id" });
+
+export default ContactMe;

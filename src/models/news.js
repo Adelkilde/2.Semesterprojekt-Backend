@@ -32,3 +32,5 @@ const News = sequelize.define(
 );
 
 News.belongsTo(Author, { foreignKey: "author_id" });
+
+export default News;

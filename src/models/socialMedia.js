@@ -28,3 +28,4 @@ const SocialMedia = sequelize.define(
 );
 
 SocialMedia.belongsTo(Author, { foreignKey: "author_id" });
+export default SocialMedia;
