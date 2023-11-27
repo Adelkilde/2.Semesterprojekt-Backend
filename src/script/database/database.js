@@ -30,12 +30,15 @@ const Author = sequelize.define(
     },
     image: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     name: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     date_of_birth: {
       type: DataTypes.DATE,
+      allowNull: false,
     },
     biography: {
       type: DataTypes.TEXT,
@@ -56,12 +59,15 @@ const Work = sequelize.define(
     },
     image: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     title: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     publication_date: {
       type: DataTypes.DATE,
+      allowNull: false,
     },
     publisher: {
       type: DataTypes.STRING,
@@ -93,15 +99,18 @@ const Review = sequelize.define(
     },
     name: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     review_text: {
       type: DataTypes.TEXT,
     },
     rating: {
       type: DataTypes.INTEGER,
+      allowNull: false,
     },
   },
   {
@@ -121,12 +130,15 @@ const News = sequelize.define(
     },
     headline: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     content: {
       type: DataTypes.TEXT,
+      allowNull: false,
     },
     created_date: {
       type: DataTypes.DATE,
+      allowNull: false,
     },
   },
   {
@@ -146,15 +158,19 @@ const ContactMe = sequelize.define(
     },
     name: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     message: {
       type: DataTypes.TEXT,
+      allowNull: false,
     },
     submitted_date: {
       type: DataTypes.DATE,
+      allowNull: false,
     },
   },
   {
@@ -173,9 +189,11 @@ const SocialMedia = sequelize.define(
     },
     platform: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     link: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
