@@ -11,5 +11,5 @@ app.use("/works", workRoutes);
 app.use("/contact", ContactMeRoutes);
 
 app.listen(port, () => {
-  console.log(`Serveren kører på http://localhost:${port}`);
+  console.log(`Server running on http://localhost:${port}`);
 });
