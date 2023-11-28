@@ -7,7 +7,6 @@ import * as reviewsRoutes from "../routes/reviewsRoutes.js"; // Routes for handl
 import * as contactMeRoutes from "../routes/contactMeRoutes.js"; // Routes for handling contactMe-related requests
 import * as newsRoutes from "../routes/newsRoutes.js"; // Routes for handling news-related requests
 import * as socialMediaRoutes from "../routes/socialMediaRoutes.js"; // Routes for handling socialMedia-related requests
-// import Syncing from "./TableUpdate.js";
 
 // Creating an Express.js application
 const app = express();
@@ -29,8 +28,6 @@ app.get("/", (req, res) => {
   res.send("Semesterprojekt Database API");
 });
 
-// Syncing();
-
 // All Author Routes
 app.get("/author", authorRoutes.getAllAuthors);
 app.get("/author/:id", authorRoutes.getAuthorById);
@@ -38,32 +35,37 @@ app.post("/author", authorRoutes.addNewAuthor);
 app.put("/author/:id", authorRoutes.updateAuthor);
 app.delete("/author/:id", authorRoutes.deleteAuthor);
 
-// All Works Routes
-app.get("/works", worksRoutes.getAllWorks);
-app.get("/works/:id", worksRoutes.getWorksById);
-app.post("/works", worksRoutes.addNewWorks);
-app.put("/works/:id", worksRoutes.updateWorks);
-
-// All Reviews Routes
-app.get("/reviews", reviewsRoutes.getAllReviews);
-app.get("/reviews/:id", reviewsRoutes.getReviewById);
-app.post("/reviews", reviewsRoutes.addNewReview);
-app.put("/reviews/:id", reviewsRoutes.updateReview);
-
 // All ContactMe Routes
 app.get("/contactme", contactMeRoutes.getAllContactMessages);
 app.get("/contactme/:id", contactMeRoutes.getContactMessageById);
 app.post("/contactme", contactMeRoutes.addNewContactMessage);
 app.put("/contactme/:id", contactMeRoutes.updateContactMessage);
+app.delete("/contactme/:id", contactMeRoutes.deleteContactMessage);
 
 // All News Routes
 app.get("/news", newsRoutes.getAllNews);
 app.get("/news/:id", newsRoutes.getNewsById);
 app.post("/news", newsRoutes.addNewNews);
 app.put("/news/:id", newsRoutes.updateNews);
+app.delete("/news/:id", newsRoutes.deleteNews);
+
+// All Reviews Routes
+app.get("/reviews", reviewsRoutes.getAllReviews);
+app.get("/reviews/:id", reviewsRoutes.getReviewById);
+app.post("/reviews", reviewsRoutes.addNewReview);
+app.put("/reviews/:id", reviewsRoutes.updateReview);
+app.delete("/reviews/:id", reviewsRoutes.deleteReview);
 
 // All SocialMedia Routes
 app.get("/socialmedia", socialMediaRoutes.getAllSocialMediaLinks);
 app.get("/socialmedia/:id", socialMediaRoutes.getSocialMediaLinkById);
 app.post("/socialmedia", socialMediaRoutes.addNewSocialMediaLink);
 app.put("/socialmedia/:id", socialMediaRoutes.updateSocialMediaLink);
+app.delete("/socialmedia/:id", socialMediaRoutes.deleteSocialMediaLink);
+
+// All Works Routes
+app.get("/works", worksRoutes.getAllWorks);
+app.get("/works/:id", worksRoutes.getWorksById);
+app.post("/works", worksRoutes.addNewWorks);
+app.put("/works/:id", worksRoutes.updateWorks);
+app.delete("/works/:id", worksRoutes.deleteWorks);
