@@ -8,7 +8,7 @@ import Works from "../models/worksModel.js";
 import SocialMedia from "../models/socialMediaModel.js";
 
 function Syncing() {
-  sequelize.sync({ force: true });
+  sequelize.sync({ alter: true });
 }
 
 // Author.create({
