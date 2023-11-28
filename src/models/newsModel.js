@@ -20,12 +20,9 @@ const News = sequelize.define(
     content: {
       type: DataTypes.TEXT, // The content field is a text
     },
-    created_date: {
-      type: DataTypes.DATE, // The created_date field is a date
-    },
   },
   {
-    timestamps: false, // This option disables Sequelize's automatic addition of timestamp fields
+    timestamps: true, // This option enables Sequelize's automatic addition of timestamp fields
   }
 );
 

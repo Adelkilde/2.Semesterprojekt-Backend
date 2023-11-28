@@ -20,13 +20,10 @@ const ContactMe = sequelize.define(
     message: {
       type: DataTypes.TEXT, // The message field is a text
     },
-    submitted_date: {
-      type: DataTypes.DATE, // The submitted_date field is a date
-    },
   },
   {
     freezeTableName: true, // This option disables Sequelize's automatic table name pluralization
-    timestamps: false, // This option disables Sequelize's automatic addition of timestamp fields
+    timestamps: true, // This option enables Sequelize's automatic addition of timestamp fields
   }
 );
 

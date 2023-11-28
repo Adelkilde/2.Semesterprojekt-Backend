@@ -7,7 +7,7 @@ import * as reviewsRoutes from "../routes/reviewsRoutes.js"; // Routes for handl
 import * as contactMeRoutes from "../routes/contactMeRoutes.js"; // Routes for handling contactMe-related requests
 import * as newsRoutes from "../routes/newsRoutes.js"; // Routes for handling news-related requests
 import * as socialMediaRoutes from "../routes/socialMediaRoutes.js"; // Routes for handling socialMedia-related requests
-import Syncing from "./TableUpdate.js";
+// import Syncing from "./TableUpdate.js";
 
 // Creating an Express.js application
 const app = express();
@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
   res.send("Semesterprojekt Database API");
 });
 
-Syncing();
+// Syncing();
 
 // All Author Routes
 app.get("/author", authorRoutes.getAllAuthors);
@@ -62,7 +62,7 @@ app.post("/news", newsRoutes.addNewNews);
 app.put("/news/:id", newsRoutes.updateNews);
 
 // All SocialMedia Routes
-app.get("/socialmedia", socialMediaRoutes.getAllSocialMedia);
-app.get("/socialmedia/:id", socialMediaRoutes.getSocialMediaById);
-app.post("/socialmedia", socialMediaRoutes.addNewSocialMedia);
-app.put("/socialmedia/:id", socialMediaRoutes.updateSocialMedia);
+app.get("/socialmedia", socialMediaRoutes.getAllSocialMediaLinks);
+app.get("/socialmedia/:id", socialMediaRoutes.getSocialMediaLinkById);
+app.post("/socialmedia", socialMediaRoutes.addNewSocialMediaLink);
+app.put("/socialmedia/:id", socialMediaRoutes.updateSocialMediaLink);
