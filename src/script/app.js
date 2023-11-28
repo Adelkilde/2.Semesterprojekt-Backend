@@ -5,6 +5,8 @@ import * as authorRoutes from "../routes/authorRoutes.js"; // Routes for handlin
 import * as worksRoutes from "../routes/worksRoutes.js"; // Routes for handling works-related requests
 import * as reviewsRoutes from "../routes/reviewsRoutes.js"; // Routes for handling reviews-related requests
 import * as contactMeRoutes from "../routes/contactMeRoutes.js"; // Routes for handling contactMe-related requests
+import * as newsRoutes from "../routes/newsRoutes.js"; // Routes for handling news-related requests
+import * as socialMediaRoutes from "../routes/socialMediaRoutes.js"; // Routes for handling socialMedia-related requests
 import Syncing from "./TableUpdate.js";
 
 // Creating an Express.js application
@@ -52,3 +54,15 @@ app.get("/contactme", contactMeRoutes.getAllContactMessages);
 app.get("/contactme/:id", contactMeRoutes.getContactMessageById);
 app.post("/contactme", contactMeRoutes.addNewContactMessage);
 app.put("/contactme/:id", contactMeRoutes.updateContactMessage);
+
+// All News Routes
+app.get("/news", newsRoutes.getAllNews);
+app.get("/news/:id", newsRoutes.getNewsById);
+app.post("/news", newsRoutes.addNewNews);
+app.put("/news/:id", newsRoutes.updateNews);
+
+// All SocialMedia Routes
+app.get("/socialmedia", socialMediaRoutes.getAllSocialMedia);
+app.get("/socialmedia/:id", socialMediaRoutes.getSocialMediaById);
+app.post("/socialmedia", socialMediaRoutes.addNewSocialMedia);
+app.put("/socialmedia/:id", socialMediaRoutes.updateSocialMedia);
