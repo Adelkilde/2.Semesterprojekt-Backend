@@ -7,8 +7,7 @@ async function getAllAuthors(req, res) {
     const authors = await Author.findAll();
     res.json(authors);
   } catch (error) {
-    res.status(500).json({ error: error.message });
-    console.error('Error in getAllAuthors:', error);
+    res.status(500).send("Error retrieving authors");
   }
 }
 
@@ -16,10 +15,14 @@ async function getAllAuthors(req, res) {
 async function getAuthorById(req, res) {
   try {
     const author = await Author.findByPk(req.params.id);
+    if (!author) {
+      res.status(404).send("Author not found");
+      console.log("Author not found");
+      return;
+    }
     res.json(author);
   } catch (error) {
-    res.status(500).json({ error: error.message });
-    console.error('Error in getAuthorById:', error);
+    res.status(500).send("Internal Server Error");
   }
 }
 
@@ -27,25 +30,29 @@ async function getAuthorById(req, res) {
 async function addNewAuthor(req, res) {
   try {
     const newAuthor = await Author.create(req.body);
+    if (!newAuthor) {
+      res.status(400).send("Invalid author data");
+      return;
+    }
     res.json(newAuthor);
   } catch (error) {
-    res.status(500).json({ error: error.message });
-    console.error('Error in addNewAuthor:', error);
+    res.status(500).send("Error creating author");
   }
 }
 
-// Function to handle requests to update an author
 async function updateAuthor(req, res) {
   try {
     const author = await Author.findByPk(req.params.id);
+    if (!author) {
+      res.status(404).send("Author not found");
+      return;
+    }
     await author.update(req.body);
     res.json(author);
   } catch (error) {
-    res.status(500).json({ error: error.message });
-    console.error('Error in updateAuthor:', error);
+    res.status(500).send("Error updating author");
   }
 }
-
 
 // Export the route handler functions
 export { getAllAuthors, getAuthorById, addNewAuthor, updateAuthor };

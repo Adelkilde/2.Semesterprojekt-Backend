@@ -66,3 +66,4 @@ app.get("/socialmedia", socialMediaRoutes.getAllSocialMediaLinks);
 app.get("/socialmedia/:id", socialMediaRoutes.getSocialMediaLinkById);
 app.post("/socialmedia", socialMediaRoutes.addNewSocialMediaLink);
 app.put("/socialmedia/:id", socialMediaRoutes.updateSocialMediaLink);
+
