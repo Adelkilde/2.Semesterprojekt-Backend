@@ -4,56 +4,69 @@ import Author from "../models/authorModel.js";
 // Function to handle requests to get all authors
 async function getAllAuthors(req, res) {
   try {
-    // Use the findAll method on the Author model to find all authors
     const authors = await Author.findAll();
-    // Send the authors as a JSON response
     res.json(authors);
   } catch (error) {
-    // If there is an error, send the error as a JSON response
-    res.json({ error: error.message });
+    res.status(500).send("Error retrieving authors");
   }
 }
 
 // Function to handle requests to get an author by ID
 async function getAuthorById(req, res) {
   try {
-    // Use the findByPk method on the Author model to find an author by its primary key (ID)
     const author = await Author.findByPk(req.params.id);
-    // If an author is found, send it as a JSON response
-    if (author) {
-      res.json(author);
-    } else {
-      // If no author is found, send a 404 status code and a message
+    if (!author) {
       res.status(404).send("Author not found");
+      console.log("Author not found");
+      return;
     }
+    res.json(author);
   } catch (error) {
-    // If there is an error, send the error as a JSON response
-    res.json({ error: error.message });
+    res.status(500).send("Internal Server Error");
   }
 }
 
 // Function to handle requests to add a new author
 async function addNewAuthor(req, res) {
-  // Use the create method on the Author model to create a new author with the data in the request body
-  const newAuthor = await Author.create(req.body);
-  // Send the new author as a JSON response
-  res.json(newAuthor);
+  try {
+    const newAuthor = await Author.create(req.body);
+    if (!newAuthor) {
+      res.status(400).send("Invalid author data");
+      return;
+    }
+    res.json(newAuthor);
+  } catch (error) {
+    res.status(500).send("Internal Server Error");
+  }
 }
 
-// Function to handle requests to update an author
 async function updateAuthor(req, res) {
-  // Use the findByPk method on the Author model to get an author by its primary key (ID)
-  const author = await Author.findByPk(req.params.id);
-  if (author) {
-    // If the author is found, update it with the data in the request body
+  try {
+    const author = await Author.findByPk(req.params.id);
+    if (!author) {
+      res.status(404).send("Author not found");
+      return;
+    }
     await author.update(req.body);
-    // Send the updated author as a JSON response
     res.json(author);
-  } else {
-    // If the author is not found, send a 404 status code and a message
-    res.status(404).send("Author not found");
+  } catch (error) {
+    res.status(500).send("Internal Server Error");
+  }
+}
+
+async function deleteAuthor(req, res) {
+  try {
+    const author = await Author.findByPk(req.params.id);
+    if (!author) {
+      res.status(404).send("Author not found");
+      return;
+    }
+    await author.destroy();
+    res.json(author);
+  } catch (error) {
+    res.status(500).send("Internal Server Error");
   }
 }
 
 // Export the route handler functions
-export { getAllAuthors, getAuthorById, addNewAuthor, updateAuthor };
+export { getAllAuthors, getAuthorById, addNewAuthor, updateAuthor, deleteAuthor };

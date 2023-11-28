@@ -36,6 +36,7 @@ app.get("/author", authorRoutes.getAllAuthors);
 app.get("/author/:id", authorRoutes.getAuthorById);
 app.post("/author", authorRoutes.addNewAuthor);
 app.put("/author/:id", authorRoutes.updateAuthor);
+app.delete("/author/:id", authorRoutes.deleteAuthor);
 
 // All Works Routes
 app.get("/works", worksRoutes.getAllWorks);
