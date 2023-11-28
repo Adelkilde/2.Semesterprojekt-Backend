@@ -18,7 +18,6 @@ CREATE TABLE Works (
     title VARCHAR(255),
     publication_date DATE,
     publisher VARCHAR(100),
-    average_rating DECIMAL(3, 2),
     purchase_link VARCHAR(255),
     description TEXT,
     FOREIGN KEY (author_id) REFERENCES Author(author_id)
@@ -41,7 +40,6 @@ CREATE TABLE News (
     author_id INT,
     headline VARCHAR(255),
     content TEXT,
-    created_date DATETIME,
     FOREIGN KEY (author_id) REFERENCES Author(author_id)
 );
 
@@ -51,7 +49,6 @@ CREATE TABLE ContactMe (
     name VARCHAR(100),
     email VARCHAR(255),
     message TEXT,
-    submitted_date DATETIME
 );
 
 -- SoMe (Social Media) table

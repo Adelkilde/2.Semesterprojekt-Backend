@@ -28,7 +28,7 @@ const Reviews = sequelize.define(
     },
   },
   {
-    timestamps: true, // This option disables Sequelize's automatic addition of timestamp fields
+    timestamps: true, // This option enables Sequelize's automatic addition of timestamp fields
   }
 );
 
