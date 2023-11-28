@@ -13,7 +13,7 @@ app.use("/author", authorRoutes);
 app.use("/contact", contactMeRoutes);
 app.use("/news", newsRoutes);
 app.use("/reviews", reviewsRoutes);
-app.use("/socialMedia", socialMediaRoutes);
+app.use("/socialmedia", socialMediaRoutes);
 app.use("/works", worksRoutes);
 
 app.listen(port, () => {
