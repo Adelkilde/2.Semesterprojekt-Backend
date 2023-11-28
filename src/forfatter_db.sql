@@ -1,5 +1,5 @@
--- Auther database
-CREATE DATABASE forfatter_db
+-- Author database
+CREATE DATABASE forfatter_db;
 
 -- Author table
 CREATE TABLE Author (
@@ -62,3 +62,7 @@ CREATE TABLE SocialMedia (
     link VARCHAR(255),
     FOREIGN KEY (author_id) REFERENCES Author(author_id)
 );
+
+-- Insert two authors into the Author table
+INSERT INTO Author (image, name, birth_year, biography) VALUES
+    ('path/to/image1.jpg', 'Caroline Storgaard Gyldmark', 1999, 'Placeholder'),

@@ -10,7 +10,9 @@ npm install cors
 
 npm install mysql2
 
-npm install dotenv -->
+npm install dotenv
+
+npm install sequelize  -->
 
 To run this app open your terminal in VS Code and type:
 
