@@ -36,10 +36,6 @@ const Works = sequelize.define(
       type: Sequelize.STRING, // The publisher field is a string
       allowNull: false, // It cannot be null
     },
-    average_rating: {
-      type: Sequelize.DECIMAL(3, 2), // The average_rating field is a decimal with precision 3 and scale 2
-      allowNull: false, // It cannot be null
-    },
     purchase_link: {
       type: Sequelize.STRING, // The purchase_link field is a string
       allowNull: false, // It cannot be null
