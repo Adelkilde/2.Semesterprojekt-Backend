@@ -2,11 +2,11 @@
 import express from "express"; // Express.js for building the server
 import cors from "cors"; // CORS for handling cross-origin requests
 import * as authorRoutes from "../routes/authorRoutes.js"; // Routes for handling author-related requests
-import * as worksRoutes from "../routes/worksRoutes.js"; // Routes for handling works-related requests
-import * as reviewsRoutes from "../routes/reviewsRoutes.js"; // Routes for handling reviews-related requests
 import * as contactMeRoutes from "../routes/contactMeRoutes.js"; // Routes for handling contactMe-related requests
 import * as newsRoutes from "../routes/newsRoutes.js"; // Routes for handling news-related requests
+import * as reviewsRoutes from "../routes/reviewsRoutes.js"; // Routes for handling reviews-related requests
 import * as socialMediaRoutes from "../routes/socialMediaRoutes.js"; // Routes for handling socialMedia-related requests
+import * as worksRoutes from "../routes/worksRoutes.js"; // Routes for handling works-related requests
 
 // Creating an Express.js application
 const app = express();
