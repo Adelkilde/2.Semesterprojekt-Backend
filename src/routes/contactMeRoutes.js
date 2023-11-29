@@ -11,6 +11,7 @@ async function getAllContactMessages(req, res) {
   } catch (error) {
     // If there's an error, send a 500 status code and a message
     res.status(500).send("Error retrieving contact messages");
+    console.log("Error retrieving contact messages");
   }
 }
 
@@ -30,6 +31,7 @@ async function getContactMessageById(req, res) {
   } catch (error) {
     // If there's an error, send a 500 status code and a message
     res.status(500).send("Internal Server Error");
+    console.log("Internal Server Error");
   }
 }
 
@@ -41,6 +43,7 @@ async function addNewContactMessage(req, res) {
     if (!newContactMessage) {
       // If the new contact message is null, send a 400 status code and a message
       res.status(400).send("Invalid contact message data");
+      console.log("Invalid contact message data");
       return;
     }
     // Send the new contact message as a JSON response
@@ -48,6 +51,7 @@ async function addNewContactMessage(req, res) {
   } catch (error) {
     // If there's an error, send a 500 status code and a message
     res.status(500).send("Internal Server Error");
+    console.log("Internal Server Error");
   }
 }
 
@@ -59,6 +63,7 @@ async function updateContactMessage(req, res) {
     if (!contactMessage) {
       // If the contact message is not found, send a 404 status code and a message
       res.status(404).send("Contact message not found");
+      console.log("Contact message not found");
       return;
     }
     // Use the update method on the contact message to update it
@@ -68,6 +73,7 @@ async function updateContactMessage(req, res) {
   } catch (error) {
     // If there's an error, send a 500 status code and a message
     res.status(500).send("Internal Server Error");
+    console.log("Internal Server Error");
   }
 }
 
@@ -76,12 +82,14 @@ async function deleteContactMessage(req, res) {
     const contactMessage = await ContactMe.findByPk(req.params.id);
     if (!contactMessage) {
       res.status(404).send("Contact message not found");
+      console.log("Contact message not found");
       return;
     }
     await contactMessage.destroy();
     res.json(contactMessage);
   } catch (error) {
     res.status(500).send("Internal Server Error");
+    console.log("Internal Server Error");
   }
 }
 
