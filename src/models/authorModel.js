@@ -11,9 +11,6 @@ const Author = sequelize.define(
       primaryKey: true, // It's the primary key
       autoIncrement: true, // It auto increments
     },
-    image: {
-      type: DataTypes.STRING(255), // The image field is a string with a maximum length of 255 characters
-    },
     name: {
       type: DataTypes.STRING(100), // The name field is a string with a maximum length of 100 characters
       allowNull: false, // It cannot be null
@@ -23,6 +20,9 @@ const Author = sequelize.define(
     },
     biography: {
       type: DataTypes.TEXT, // The biography field is a text
+    },
+    image: {
+      type: DataTypes.STRING(255), // The image field is a string with a maximum length of 255 characters
     },
   },
   {

@@ -20,10 +20,6 @@ const Works = sequelize.define(
         key: "author_id", // The foreign key is author_id
       },
     },
-    image: {
-      type: Sequelize.STRING, // The image field is a string
-      allowNull: false, // It cannot be null
-    },
     title: {
       type: Sequelize.STRING, // The title field is a string
       allowNull: false, // It cannot be null
@@ -36,16 +32,12 @@ const Works = sequelize.define(
       type: Sequelize.STRING, // The publisher field is a string
       allowNull: false, // It cannot be null
     },
-    average_rating: {
-      type: Sequelize.DECIMAL(3, 2), // The average_rating field is a decimal with precision 3 and scale 2
-      allowNull: false, // It cannot be null
-    },
-    purchase_link: {
-      type: Sequelize.STRING, // The purchase_link field is a string
-      allowNull: false, // It cannot be null
-    },
     description: {
       type: Sequelize.TEXT, // The description field is a text
+      allowNull: false, // It cannot be null
+    },
+    image: {
+      type: Sequelize.STRING, // The image field is a string
       allowNull: false, // It cannot be null
     },
   },

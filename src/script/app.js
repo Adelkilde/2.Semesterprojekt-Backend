@@ -2,10 +2,8 @@
 import express from "express"; // Express.js for building the server
 import cors from "cors"; // CORS for handling cross-origin requests
 import * as authorRoutes from "../routes/authorRoutes.js"; // Routes for handling author-related requests
-import * as contactMeRoutes from "../routes/contactMeRoutes.js"; // Routes for handling contactMe-related requests
 import * as newsRoutes from "../routes/newsRoutes.js"; // Routes for handling news-related requests
 import * as reviewsRoutes from "../routes/reviewsRoutes.js"; // Routes for handling reviews-related requests
-import * as socialMediaRoutes from "../routes/socialMediaRoutes.js"; // Routes for handling socialMedia-related requests
 import * as worksRoutes from "../routes/worksRoutes.js"; // Routes for handling works-related requests
 
 // Creating an Express.js application
@@ -35,13 +33,6 @@ app.post("/author", authorRoutes.addNewAuthor);
 app.put("/author/:id", authorRoutes.updateAuthor);
 app.delete("/author/:id", authorRoutes.deleteAuthor);
 
-// All ContactMe Routes
-app.get("/contactme", contactMeRoutes.getAllContactMessages);
-app.get("/contactme/:id", contactMeRoutes.getContactMessageById);
-app.post("/contactme", contactMeRoutes.addNewContactMessage);
-app.put("/contactme/:id", contactMeRoutes.updateContactMessage);
-app.delete("/contactme/:id", contactMeRoutes.deleteContactMessage);
-
 // All News Routes
 app.get("/news", newsRoutes.getAllNews);
 app.get("/news/:id", newsRoutes.getNewsById);
@@ -55,13 +46,6 @@ app.get("/reviews/:id", reviewsRoutes.getReviewById);
 app.post("/reviews", reviewsRoutes.addNewReview);
 app.put("/reviews/:id", reviewsRoutes.updateReview);
 app.delete("/reviews/:id", reviewsRoutes.deleteReview);
-
-// All SocialMedia Routes
-app.get("/socialmedia", socialMediaRoutes.getAllSocialMediaLinks);
-app.get("/socialmedia/:id", socialMediaRoutes.getSocialMediaLinkById);
-app.post("/socialmedia", socialMediaRoutes.addNewSocialMediaLink);
-app.put("/socialmedia/:id", socialMediaRoutes.updateSocialMediaLink);
-app.delete("/socialmedia/:id", socialMediaRoutes.deleteSocialMediaLink);
 
 // All Works Routes
 app.get("/works", worksRoutes.getAllWorks);
