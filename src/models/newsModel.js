@@ -12,7 +12,12 @@ const News = sequelize.define(
       autoIncrement: true, // It auto increments
     },
     author_id: {
-      type: DataTypes.INTEGER, // The author_id field is an integer
+      type: Sequelize.INTEGER, // The author_id field is an integer
+      allowNull: false, // It cannot be null
+      references: {
+        model: "Author", // It references the Author model
+        key: "author_id", // The foreign key is author_id
+      },
     },
     headline: {
       type: DataTypes.STRING(255), // The headline field is a string with a maximum length of 255 characters

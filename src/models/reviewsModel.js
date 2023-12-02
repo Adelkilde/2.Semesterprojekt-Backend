@@ -12,7 +12,12 @@ const Reviews = sequelize.define(
       autoIncrement: true, // It auto increments
     },
     work_id: {
-      type: DataTypes.INTEGER, // The work_id field is an integer
+      type: Sequelize.INTEGER, // The work_id field is an integer
+      allowNull: false, // It cannot be null
+      references: {
+        model: Works, // It references the Author model
+        key: "work_id", // The foreign key is author_id
+      },
     },
     name: {
       type: DataTypes.STRING(100), // The name field is a string with a maximum length of 100 characters
