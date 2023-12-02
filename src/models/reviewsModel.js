@@ -1,5 +1,5 @@
 // Importing necessary modules
-import { Sequelize, DataTypes } from "sequelize";
+import { DataTypes } from "sequelize";
 import sequelize from "../script/database/database.js"; // The configured Sequelize instance
 import Works from "./worksModel.js";
 
@@ -13,7 +13,7 @@ const Reviews = sequelize.define(
       autoIncrement: true, // It auto increments
     },
     work_id: {
-      type: Sequelize.INTEGER, // The work_id field is an integer
+      type: DataTypes.INTEGER, // The work_id field is an integer
       allowNull: false, // It cannot be null
       references: {
         model: Works, // It references the Works model

@@ -7,7 +7,7 @@
     "start": "node --watch src/script/app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "HOWL",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
@@ -16,5 +16,5 @@
     "mysql2": "^3.6.5",
     "sequelize": "^6.35.1"
   },
-  "description": "<!-- Noter til os"
+  "description": "Muligvis KEAs bedste semesterprojekt, nogensinde."
 }

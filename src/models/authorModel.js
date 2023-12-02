@@ -1,5 +1,5 @@
 // Importing necessary modules
-import { Sequelize, DataTypes } from "sequelize"; // Sequelize for handling SQL database operations
+import { DataTypes } from "sequelize"; // Sequelize for handling SQL database operations
 import sequelize from "../script/database/database.js"; // The configured Sequelize instance
 
 // Defining the Author model
