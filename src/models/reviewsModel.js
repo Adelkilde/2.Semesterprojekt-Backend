@@ -1,6 +1,7 @@
 // Importing necessary modules
 import { Sequelize, DataTypes } from "sequelize";
 import sequelize from "../script/database/database.js"; // The configured Sequelize instance
+import Works from "./worksModel.js";
 
 // Defining the Reviews model
 const Reviews = sequelize.define(
@@ -15,8 +16,8 @@ const Reviews = sequelize.define(
       type: Sequelize.INTEGER, // The work_id field is an integer
       allowNull: false, // It cannot be null
       references: {
-        model: Works, // It references the Author model
-        key: "work_id", // The foreign key is author_id
+        model: Works, // It references the Works model
+        key: "work_id", // The foreign key is work_id
       },
     },
     name: {
