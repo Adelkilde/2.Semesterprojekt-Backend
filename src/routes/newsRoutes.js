@@ -11,6 +11,7 @@ async function getAllNews(req, res) {
   } catch (error) {
     // If there's an error, send a 500 status code and a message
     res.status(500).send("Error retrieving news");
+    console.log("Error retrieving news");
   }
 }
 
