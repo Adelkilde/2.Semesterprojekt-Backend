@@ -34,17 +34,17 @@ async function getWorksById(req, res) {
 }
 
 // Function to handle requests to add a new work
-async function addNewWorks(req, res) {
+async function addNewWork(req, res) {
   try {
     // Use the create method on the Works model to add a new work
-    const works = await Works.create(req.body);
-    if (!works) {
+    const newWork = await Works.create(req.body);
+    if (!newWork) {
       // If the new work is null, send a 400 status code and a message
       res.status(400).send("Invalid works data");
       return;
     }
     // Send the new work as a JSON response
-    res.json(works);
+    res.json(newWork);
   } catch (error) {
     // If there's an error, send a 500 status code and a message
     res.status(500).send("Internal Server Error");
@@ -52,7 +52,7 @@ async function addNewWorks(req, res) {
 }
 
 // Function to handle requests to update a work
-async function updateWorks(req, res) {
+async function updateWork(req, res) {
   try {
     // Use the findByPk method on the Works model to get a work by its primary key (ID)
     const works = await Works.findByPk(req.params.id);
@@ -72,7 +72,7 @@ async function updateWorks(req, res) {
   }
 }
 
-async function deleteWorks(req, res) {
+async function deleteWork(req, res) {
   try {
     // Use the findByPk method on the Works model to get a work by its primary key (ID)
     const works = await Works.findByPk(req.params.id);
@@ -93,4 +93,4 @@ async function deleteWorks(req, res) {
 }
 
 // Export the route handler functions
-export { getAllWorks, getWorksById, addNewWorks, updateWorks, deleteWorks };
+export { getAllWorks, getWorksById, addNewWork, updateWork, deleteWork };

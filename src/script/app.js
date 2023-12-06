@@ -50,6 +50,6 @@ app.delete("/reviews/:id", reviewsRoutes.deleteReview);
 // All Works Routes
 app.get("/works", worksRoutes.getAllWorks);
 app.get("/works/:id", worksRoutes.getWorksById);
-app.post("/works", worksRoutes.addNewWorks);
-app.put("/works/:id", worksRoutes.updateWorks);
-app.delete("/works/:id", worksRoutes.deleteWorks);
+app.post("/works", worksRoutes.addNewWork);
+app.put("/works/:id", worksRoutes.updateWork);
+app.delete("/works/:id", worksRoutes.deleteWork);
