@@ -41,6 +41,10 @@ Reviews.belongsTo(Works, {
   foreignKey: "work_id",
   onDelete: "CASCADE",
 });
+Works.hasMany(Reviews, {
+  foreignKey: "work_id",
+  onDelete: "CASCADE",
+});
 
 // Exporting the Reviews model
 export default Reviews;

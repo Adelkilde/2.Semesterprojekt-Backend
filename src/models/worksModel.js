@@ -45,6 +45,5 @@ const Works = sequelize.define(
     timestamps: false, // This option disables Sequelize's automatic addition of timestamp fields
   }
 );
-
 // Exporting the Works model
 export default Works;
