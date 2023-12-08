@@ -2,6 +2,7 @@
 import { DataTypes } from "sequelize"; // Sequelize for handling SQL database operations
 import sequelize from "../script/database/database.js"; // The configured Sequelize instance
 import Author from "./authorModel.js"; // The Author model
+import Reviews from "./reviewsModel.js";
 
 // Defining the Works model
 const Works = sequelize.define(
@@ -45,5 +46,10 @@ const Works = sequelize.define(
     timestamps: false, // This option disables Sequelize's automatic addition of timestamp fields
   }
 );
+Works.hasMany(Reviews, {
+  foreignKey: "work_id",
+  onDelete: "CASCADE",
+});
+
 // Exporting the Works model
 export default Works;
