@@ -19,7 +19,6 @@ const Reviews = sequelize.define(
         model: Works, // It references the Works model
         key: "work_id", // The foreign key is work_id
       },
-      onDelete: "CASCADE",
     },
     name: {
       type: DataTypes.STRING(100), // The name field is a string with a maximum length of 100 characters
@@ -38,10 +37,5 @@ const Reviews = sequelize.define(
     timestamps: true, // This option enables Sequelize's automatic addition of timestamp fields
   }
 );
-// Works.hasMany(Reviews, {
-//   foreignKey: "work_id",
-//   onDelete: "CASCADE",
-// });
-// Reviews.belongsTo(Works);
-// Exporting the Reviews model
+
 export default Reviews;
