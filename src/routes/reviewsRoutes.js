@@ -1,5 +1,5 @@
 // Importing the Reviews model from the reviewsModel.js file
-import Reviews from "../models/reviewsModel.js";
+import { Reviews } from "../models/associations.js";
 
 // Function to handle requests to get all reviews
 async function getAllReviews(req, res) {
@@ -86,4 +86,10 @@ async function deleteReview(req, res) {
 }
 
 // Export the route handler functions
-export { getAllReviews, getReviewById, addNewReview, updateReview, deleteReview };
+export {
+  getAllReviews,
+  getReviewById,
+  addNewReview,
+  updateReview,
+  deleteReview,
+};

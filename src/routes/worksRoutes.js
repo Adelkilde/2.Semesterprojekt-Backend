@@ -1,6 +1,5 @@
 // Importing the Works model from the worksModel.js file
-import Works from "../models/worksModel.js";
-
+import { Works } from "../models/associations.js";
 // Function to handle requests to get all works
 async function getAllWorks(req, res) {
   try {
