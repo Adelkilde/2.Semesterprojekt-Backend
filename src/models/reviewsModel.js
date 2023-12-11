@@ -1,7 +1,7 @@
 // Importing necessary modules
 import { DataTypes } from "sequelize";
 import sequelize from "../script/database/database.js"; // The configured Sequelize instance
-import Works from "./worksModel.js";
+import { Works } from "./associations.js";
 
 // Defining the Reviews model
 const Reviews = sequelize.define(
@@ -38,5 +38,4 @@ const Reviews = sequelize.define(
   }
 );
 
-// Exporting the Reviews model
 export default Reviews;
