@@ -8,8 +8,6 @@ Works.hasMany(Reviews, {
 });
 Reviews.belongsTo(Works, {
   foreignKey: "work_id",
-  onDelete: "CASCADE",
-  hooks: true,
 });
 
 export { Works, Reviews };
