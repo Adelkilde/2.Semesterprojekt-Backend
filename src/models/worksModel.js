@@ -34,10 +34,6 @@ const Works = sequelize.define(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    excerpt: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
     image: {
       type: DataTypes.STRING,
       allowNull: false,
