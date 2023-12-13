@@ -36,6 +36,10 @@ const Works = sequelize.define(
       type: DataTypes.TEXT, // The description field is a text
       allowNull: false, // It cannot be null
     },
+    excerpt: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
     image: {
       type: DataTypes.STRING, // The image field is a string
       allowNull: false, // It cannot be null

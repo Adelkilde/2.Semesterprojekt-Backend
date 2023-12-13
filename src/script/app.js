@@ -26,28 +26,24 @@ app.get("/", (req, res) => {
   res.send("Semesterprojekt Database API");
 });
 
-// All Author Routes
 app.get("/author", authorRoutes.getAllAuthors);
 app.get("/author/:id", authorRoutes.getAuthorById);
 app.post("/author", authorRoutes.addNewAuthor);
 app.put("/author/:id", authorRoutes.updateAuthor);
 app.delete("/author/:id", authorRoutes.deleteAuthor);
 
-// All News Routes
 app.get("/news", newsRoutes.getAllNews);
 app.get("/news/:id", newsRoutes.getNewsById);
 app.post("/news", newsRoutes.addNewNews);
 app.put("/news/:id", newsRoutes.updateNews);
 app.delete("/news/:id", newsRoutes.deleteNews);
 
-// All Reviews Routes
 app.get("/reviews", reviewsRoutes.getAllReviews);
 app.get("/reviews/:id", reviewsRoutes.getReviewById);
 app.post("/reviews", reviewsRoutes.addNewReview);
 app.put("/reviews/:id", reviewsRoutes.updateReview);
 app.delete("/reviews/:id", reviewsRoutes.deleteReview);
 
-// All Works Routes
 app.get("/works", worksRoutes.getAllWorks);
 app.get("/works/:id", worksRoutes.getWorksById);
 app.post("/works", worksRoutes.addNewWork);
