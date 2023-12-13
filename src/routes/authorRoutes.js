@@ -1,7 +1,5 @@
-// Importing the Author model from the authorModel.js file
 import Author from "../models/authorModel.js";
 
-// Function to handle requests to get all authors
 async function getAllAuthors(req, res) {
   try {
     const authors = await Author.findAll();
@@ -12,7 +10,6 @@ async function getAllAuthors(req, res) {
   }
 }
 
-// Function to handle requests to get an author by ID
 async function getAuthorById(req, res) {
   try {
     const author = await Author.findByPk(req.params.id);
@@ -28,7 +25,6 @@ async function getAuthorById(req, res) {
   }
 }
 
-// Function to handle requests to add a new author
 async function addNewAuthor(req, res) {
   try {
     const newAuthor = await Author.create(req.body);
@@ -73,5 +69,4 @@ async function deleteAuthor(req, res) {
   }
 }
 
-// Export the route handler functions
 export { getAllAuthors, getAuthorById, addNewAuthor, updateAuthor, deleteAuthor };

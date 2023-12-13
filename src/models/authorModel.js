@@ -1,35 +1,33 @@
-// Importing necessary modules
-import { DataTypes } from "sequelize"; // Sequelize for handling SQL database operations
-import sequelize from "../script/database/database.js"; // The configured Sequelize instance
+import { DataTypes } from "sequelize"; 
+import sequelize from "../script/database/database.js"; 
 
-// Defining the Author model
+
 const Author = sequelize.define(
   "Author",
   {
     author_id: {
-      type: DataTypes.INTEGER, // The author_id field is an integer
-      primaryKey: true, // It's the primary key
-      autoIncrement: true, // It auto increments
+      type: DataTypes.INTEGER, 
+      primaryKey: true, 
+      autoIncrement: true, 
     },
     name: {
-      type: DataTypes.STRING(100), // The name field is a string with a maximum length of 100 characters
-      allowNull: false, // It cannot be null
+      type: DataTypes.STRING(100), 
+      allowNull: false,
     },
     birth_year: {
-      type: DataTypes.INTEGER, // The birth_year field is an integer
+      type: DataTypes.INTEGER, 
     },
     biography: {
-      type: DataTypes.TEXT, // The biography field is a text
+      type: DataTypes.TEXT, 
     },
     image: {
-      type: DataTypes.STRING(255), // The image field is a string with a maximum length of 255 characters
+      type: DataTypes.STRING(255), 
     },
   },
   {
-    freezeTableName: true, // This option disables Sequelize's automatic table name pluralization
-    timestamps: false, // This option disables Sequelize's automatic addition of timestamp fields
+    freezeTableName: true, 
+    timestamps: false, 
   }
 );
 
-// Exporting the Author model
 export default Author;

@@ -1,40 +1,40 @@
-// Importing necessary modules
+
 import { DataTypes } from "sequelize";
-import sequelize from "../script/database/database.js"; // The configured Sequelize instance
+import sequelize from "../script/database/database.js";
 import { Works } from "./associations.js";
 
-// Defining the Reviews model
+
 const Reviews = sequelize.define(
   "Reviews",
   {
     review_id: {
-      type: DataTypes.INTEGER, // The review_id field is an integer
-      primaryKey: true, // It's the primary key
-      autoIncrement: true, // It auto increments
+      type: DataTypes.INTEGER, 
+      primaryKey: true, 
+      autoIncrement: true, 
     },
     work_id: {
-      type: DataTypes.INTEGER, // The work_id field is an integer
-      allowNull: false, // It cannot be null
+      type: DataTypes.INTEGER, 
+      allowNull: false,
       references: {
-        model: Works, // It references the Works model
-        key: "work_id", // The foreign key is work_id
+        model: Works,
+        key: "work_id",
       },
     },
     name: {
-      type: DataTypes.STRING(100), // The name field is a string with a maximum length of 100 characters
+      type: DataTypes.STRING(100), 
     },
     email: {
-      type: DataTypes.STRING(255), // The email field is a string with a maximum length of 255 characters
+      type: DataTypes.STRING(255), 
     },
     review_text: {
-      type: DataTypes.TEXT, // The review_text field is a text
+      type: DataTypes.TEXT, 
     },
     rating: {
-      type: DataTypes.INTEGER, // The rating field is an integer
+      type: DataTypes.INTEGER, 
     },
   },
   {
-    timestamps: true, // This option enables Sequelize's automatic addition of timestamp fields
+    timestamps: true, 
   }
 );
 
