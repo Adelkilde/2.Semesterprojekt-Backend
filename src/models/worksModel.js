@@ -1,54 +1,51 @@
-// Importing necessary modules
-import { DataTypes } from "sequelize"; // Sequelize for handling SQL database operations
-import sequelize from "../script/database/database.js"; // The configured Sequelize instance
-import Author from "./authorModel.js"; // The Author model
+import { DataTypes } from "sequelize";
+import sequelize from "../script/database/database.js";
+import Author from "./authorModel.js";
 
-// Defining the Works model
 const Works = sequelize.define(
   "Works",
   {
     work_id: {
-      type: DataTypes.INTEGER, // The work_id field is an integer
-      primaryKey: true, // It's the primary key
-      autoIncrement: true, // It auto increments
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
     },
     author_id: {
-      type: DataTypes.INTEGER, // The author_id field is an integer
-      allowNull: false, // It cannot be null
+      type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
-        model: Author, // It references the Author model
-        key: "author_id", // The foreign key is author_id
+        model: Author,
+        key: "author_id",
       },
     },
     title: {
-      type: DataTypes.STRING, // The title field is a string
-      allowNull: false, // It cannot be null
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     publication_date: {
-      type: DataTypes.DATE, // The publication_date field is a date
-      allowNull: false, // It cannot be null
+      type: DataTypes.DATE,
+      allowNull: false,
     },
     publisher: {
-      type: DataTypes.STRING, // The publisher field is a string
-      allowNull: false, // It cannot be null
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     description: {
-      type: DataTypes.TEXT, // The description field is a text
-      allowNull: false, // It cannot be null
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
     excerpt: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
     image: {
-      type: DataTypes.STRING, // The image field is a string
-      allowNull: false, // It cannot be null
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
-    timestamps: false, // This option disables Sequelize's automatic addition of timestamp fields
+    timestamps: false,
   }
 );
 
-// Exporting the Works model
 export default Works;

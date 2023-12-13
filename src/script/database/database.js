@@ -1,7 +1,6 @@
-import { Sequelize } from "sequelize"; // Import Sequelize and DataTypes
-import "dotenv/config"; // Load environment variables
+import { Sequelize } from "sequelize";
+import "dotenv/config";
 
-// Create a Sequelize instance
 const sequelize = new Sequelize(
   process.env.MYSQL_DATABASE,
   process.env.MYSQL_USER,
@@ -26,7 +25,4 @@ sequelize
   .catch((error) => {
     console.error("Error syncing database:", error);
   });
-// Export the Sequelize instance
 export default sequelize;
-
-// Running on: https://semesterprojekt2-deployment-with-azure.azurewebsites.net/
