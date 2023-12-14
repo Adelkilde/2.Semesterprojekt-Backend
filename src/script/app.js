@@ -14,11 +14,11 @@ app.use(express.json());
 app.use(cors());
 
 app.listen(port, () => {
-  console.log("Server is running");
+  console.log(`Server is running on http://localhost:${port}`);
 });
 
 app.get("/", (req, res) => {
-  res.send("Semesterprojekt Database API");
+  res.send("Gyldmark Database");
 });
 
 app.get("/author", authorRoutes.getAllAuthors);
