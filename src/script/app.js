@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors());
 
 app.listen(port, () => {
-  console.log("Bingus bongus, we're running on plonkus 🍔");
+  console.log("Server is running");
 });
 
 app.get("/", (req, res) => {
